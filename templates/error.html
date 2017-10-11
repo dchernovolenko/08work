@@ -1,9 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  <body>
-     {{err}}
-     <br>
-     <a href="/"> try again </a>
-  </body>
-</html>
+{% extends "welcome.html" %}
+
+{% block content1 %}
+<form action = "/" method = "POST">
+    <input type = "submit" value = "return to Login" name="backLogin">
+</form>
+{% endblock %}
+
+{% block content2 %}
+    {% set messages = get_flashed_messages() %}
+    {% for message in messages %}
+        <center> <h1> {{message}} </h1> </center>
+    {% endfor %}
+    You done goofed. Please try relogging in. 
+{% endblock %}

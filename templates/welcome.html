@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <body>
-    Hello frend
-    <form  action="/welcome">
-      <input type="submit" placeholder="Log out:" value="true" name="lo">
-    </form>
-  </body>
+        <head>
+                <title>Cool Interactive Title</title>
+        </head>
+
+        <body>
+                {% block content1 %}
+                <form action = "/logOut" method = "POST">
+                        <input type = "submit" value = "logOut">
+                </form>
+                {% endblock %}
+
+                {% block content2 %}
+                <center> <h1>Welcome {{usrName}} to this cool page!</h1> </center>
+                <br>
+                Name: {{usrName}} <br>
+                {% endblock %}
+                
+        </body>
 </html>
